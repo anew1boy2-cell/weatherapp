@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#5aa9ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg">
+  <title>简洁天气</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>天气</h1>
+      <div class="search">
+        <input id="city" placeholder="输入城市，如 Los Angeles" />
+        <button id="searchBtn">搜索</button>
+      </div>
+    </header>
+    <section id="status" class="status">正在加载天气…</section>
+    <section id="weather" class="card hidden">
+      <div class="location" id="location"></div>
+      <div class="current">
+        <div>
+          <div class="temp" id="temp">--°</div>
+          <div id="desc">--</div>
+        </div>
+        <div class="icon" id="icon">☀️</div>
+      </div>
+      <div class="details">
+        <div><span>体感</span><b id="feels">--°</b></div>
+        <div><span>湿度</span><b id="humidity">--%</b></div>
+        <div><span>风速</span><b id="wind">-- km/h</b></div>
+      </div>
+    </section>
+    <section id="forecast" class="forecast"></section>
+  </main>
+  <script src="app.js"></script>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js");</script>
+</body>
+</html>
